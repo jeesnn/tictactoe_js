@@ -15,7 +15,7 @@ class Board {
         }
     }
 
-    placeMark(pos, mark) { //allow mark/fill position
+    placeMark(pos, mark) { //allow mark/fill position when is empty
         if (!this.isEmptyPos(pos)) {
             throw new MoveError("Is not an empty position!");
         }
@@ -39,3 +39,5 @@ class Board {
         return (0 <= pos[0]) && (pos[0] < 3) && (0 <= pos[1]) && (pos[1] < 3);
     }
 }
+
+Board.marks = ['x', 'o'];
