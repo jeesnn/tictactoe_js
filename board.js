@@ -37,6 +37,20 @@ class Board {
         console.log(strs.join('-----\n'));
     }
 
+    winner() {
+        const posSeqs = [
+
+        ];
+        for (let i = 0; i < posSeqs; i++) {
+            const winner = this.winnerHelper(posSeqs[i]);
+
+            if (winner !== null) {
+                return winner;
+            }
+        }
+        return null;
+    }
+
     winnerHelper(posSeq) {
         for (let markIdx = 0; markIdx < Board.marks.length; markIdx++) {
             const targetMark = Board.marks[markIdx];
