@@ -7,4 +7,8 @@ class Game {
         this.board = new Board();
         this.currentPlayer = Board.marks[0];
     }
+
+    playMove(pos) {
+        this.board.placeMark(pos, this.currentPlayer);
+    }
 }
