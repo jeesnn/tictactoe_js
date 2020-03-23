@@ -27,4 +27,20 @@ class Game {
             });
         });
     }
+
+    run(reader, gameCompletionCallback) {
+        this.promptMove(reader, move => {
+            try {
+                this.playMove(move);
+            } catch (e) {
+                if (e instanceof MoveError) {
+                    console.log(e.msg);
+                } else {
+                    throw e;
+                }
+            }
+
+            if ()
+        });
+    }
 }
