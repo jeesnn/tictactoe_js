@@ -29,7 +29,7 @@ class Game {
     }
 
     run(reader, gameCompletionCallback) {
-        this.promptMove(reader, move => {
+        this.promptMove(reader, move => { //prompt user/current player to play a move
             try {
                 this.playMove(move);
             } catch (e) {
@@ -40,7 +40,18 @@ class Game {
                 }
             }
 
-            if ()
+            if (this.isOver()) { //when game is over print result
+                this.board.print();
+                if (this.winner()) {
+                    console.log(`${this.winner()} has won!`);
+                } else {
+                    console.log('NO ONE WINS!');
+                }
+                gameCompletionCallback();
+            } else {
+                //continue loop
+                this.run(reader, gameCompletionCallback);
+            }
         });
     }
 }
