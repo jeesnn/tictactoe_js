@@ -27,4 +27,8 @@ class Board {
         }
         return grid;
     }
+
+    static isValidPos(pos) {
+        return (0 <= pos[0]) && (pos[0] < 3) && (0 <= pos[1]) && (pos[1] < 3);
+    }
 }
