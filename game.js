@@ -14,6 +14,7 @@ class Game {
 
     playMove(pos) {
         this.board.placeMark(pos, this.currentPlayer);
+        this.swapTurn();
     }
 
     promptMove(reader, callback) {
@@ -70,3 +71,5 @@ class Game {
         return this.board.winner();
     }
 }
+
+module.exports = Game;
