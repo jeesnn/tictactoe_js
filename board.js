@@ -39,7 +39,19 @@ class Board {
 
     winner() {
         const posSeqs = [
+            //horizontals win on rows
+            [[0, 0], [0, 1], [0, 2]],
+            [[1, 0], [1, 1], [1, 2]],
+            [[2, 0], [2, 1], [2, 2]],
 
+            //verticals win on columns
+            [[0, 0], [1, 0], [2, 0]],
+            [[0, 1], [1, 1], [2, 1]],
+            [[0, 2], [1, 2], [2, 2]],
+
+            //diagonals win on 2 diagonals
+            [[0, 0], [1, 1], [2, 2]],
+            [[2, 0], [1, 1], [0, 2]]
         ];
         for (let i = 0; i < posSeqs; i++) {
             const winner = this.winnerHelper(posSeqs[i]);
