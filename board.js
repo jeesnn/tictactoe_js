@@ -16,10 +16,15 @@ class Board {
     }
 
     static makeGrid() {
-        const grid = [];
+        const grid = []; //grid is a matrix of 3 by 3
 
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 3; i++) { //layout grid template
             grid.push([]);
+
+            for (let j = 0; j < 3; j++) { //set each grid cell as null/empty
+                grid[i].push(null);
+            }
         }
+        return grid;
     }
 }
