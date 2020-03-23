@@ -7,11 +7,12 @@ class Board {
 
     isEmptyPos(pos) {
         if (!Board.isValidPos(pos)) {
-            //if not a valid board position
+            //if not an empty board position, is not a valid position since is filled
             throw new MoveError("Is not a valid position!");
         } else {
-            //is a valid board position so set to empty not filled position
+            //is an empty position so is null
             return (this.grid[pos[0]][pos[1]] === null);
         }
     }
+
 }
