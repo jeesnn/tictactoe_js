@@ -15,6 +15,13 @@ class Board {
         }
     }
 
+    placeMark(pos, mark) { //allow mark/fill position
+        if (!this.isEmptyPos(pos)) {
+            throw new MoveError("Is not an empty position!");
+        }
+        this.grid[pos[0]][pos[1]] = mark;
+    }
+
     static makeGrid() {
         const grid = []; //grid is a matrix of 3 by 3
 
@@ -28,7 +35,7 @@ class Board {
         return grid;
     }
 
-    static isValidPos(pos) {
+    static isValidPos(pos) { //within grid bounds
         return (0 <= pos[0]) && (pos[0] < 3) && (0 <= pos[1]) && (pos[1] < 3);
     }
 }
