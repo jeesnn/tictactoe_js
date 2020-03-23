@@ -54,4 +54,11 @@ class Game {
             }
         });
     }
+    swapTurn() { //swap turns between current player
+        if (this.currentPlayer === Board.marks[0]) {
+            this.currentPlayer = Board.marks[1];
+        } else {
+            this.currentPlayer = Board.marks[0];
+        }
+    }
 }
