@@ -15,6 +15,21 @@ class Board {
         }
     }
 
+    isOver() { //game is over when 3 of the cells contiguously are of the same marks
+        if (this.winner() != null) {
+            return true;
+        }
+
+        for (let rowIdx = 0; rowIdx < 3; rowIdx++) {
+            for (let colIdx = 0; colIdx < 3; colIdx++) {
+                if (this.isEmptyPos([rowIdx, colIdx])) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     placeMark(pos, mark) { //allow mark/fill position when is empty
         if (!this.isEmptyPos(pos)) {
             throw new MoveError("Is not an empty position!");
