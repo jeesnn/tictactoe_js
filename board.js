@@ -22,6 +22,21 @@ class Board {
         this.grid[pos[0]][pos[1]] = mark;
     }
 
+    print() {
+        const strs = [];
+
+        for (let rowIdx = 0; rowIdx < 3; rowIdx++) {
+            const marks = [];
+            for (let colIdx = 0; colIdx < 3; colIdx++) {
+                marks.push(
+                    this.grid[rowIdx][colIdx] ? this.grid[rowId][colIdx] : " "
+                );
+            }
+            strs.push(`${marks.join('|')}\n`);
+        }
+        console.log(strs.join('-----\n'));
+    }
+
     static makeGrid() {
         const grid = []; //grid is a matrix of 3 by 3
 
